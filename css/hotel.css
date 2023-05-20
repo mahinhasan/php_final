@@ -1,0 +1,196 @@
+:root{
+    --main-color:#DD2F6E;
+    --color-dark:#1D2231;
+    --text-grey:#8390A2;
+
+}
+
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    list-style-type: none;
+    text-decoration: none;
+    font-family:'Courier New', Courier, monospace;
+}
+
+main{
+    margin-top: 87px;
+    padding: 2rem 1.5rem;
+    
+    min-height: calc(100vh - 87px);
+}
+
+
+.cards{
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+    grid-gap:2rem;
+    margin-top: 1rem;
+   
+}
+
+.card-single{
+    display: flex;
+    justify-content: space-between;
+    background: rgb(119, 73, 73);
+    padding: 2rem;
+    border-radius: 5px;
+}
+
+.card-single div:last-child{
+    font-size: 2.5rem;
+    color: var(--main-color);
+}
+
+.card-single div:first-child{
+    
+    color:var(--text-grey);
+}
+
+.recent-flex{
+    margin-top: 3.5rem;
+    display: grid;
+    grid-template-columns: 70% auto;
+}
+
+
+.card{
+    background: #fff;
+    border-radius: 8px;
+}
+
+.card-header,
+.card-body{
+    padding: 1rem;
+}
+
+.card-header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #fff;
+}
+
+.card-header button{
+    background: var(--main-color);
+    border-radius: 10px;
+    color: #fff;
+    font-size: .7rem;
+    padding: .5rem 1rem;
+}
+
+table{
+    border-collapse: collapse;
+}
+
+thead tr{
+    border-top: 1px solid #f0f0f0;
+    border-bottom: 1px solid #f0f0f0;
+}
+
+thead td{
+    font-weight: 700;
+}
+td{
+    padding: .5rem;
+    font-size: .9rem;
+    color: #222;
+}
+
+
+ .packege-header {
+        text-align: center;
+        margin-top: 30px;
+        color:#3B82F6 ;
+        font-weight: 900;
+       text-align: center;
+    }
+   
+    
+    .container {
+        
+        
+        padding: 30px;
+        border-radius: 5px;
+        margin-top: 21px;
+        display: flex;
+        align-items: center;
+        margin-bottom: 50px;
+    }
+    
+    .image-cards {
+        
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        grid-column-gap: 20px;
+        grid-row-gap: 45px;
+       margin-right: 60px;
+       margin-left: 110px;
+       padding: 10px;
+    }
+    
+    .image-card .image-card-banner img {
+        
+        width: 294px;
+        height: 217px;
+        border-radius: 6px  6px 0 0;
+        transition:1s  filter  ;
+        filter: brightness(100%);
+      
+
+    }
+    .image-card-banner img:hover  {
+        
+        filter: brightness(50%);
+    }  
+.card-details{
+   padding: 10px;
+}
+    .card-details h1 {
+        font-size: 15px;
+        line-height: 40px;
+        margin-bottom: 20px;
+        font-weight: 900;
+        font-family: 'Poppins', sans-serif;
+       
+       
+    }
+    
+    .cards-p {
+        font-size: 15px;
+        font-weight:400;
+        
+      
+    
+    }
+    .fa-bolt{
+        color: rgb(190, 117, 22);
+    }
+    .fa-clock{
+        color: #f6573b;
+    }
+    #price{
+        font-weight: 900;
+        color: rgb(237, 116, 100);
+        font-size: 18px;
+    }
+    
+    .image-card {
+        box-shadow: 0px 5px 20px -10px #111;
+        border-radius: 5px;
+        
+       
+    
+    }
+    .best-resorts{
+        padding-top: 20px;
+        background-color: #EFF6FF;
+        padding-bottom: 20px;
+    }
+    .discount-price{
+        text-decoration:line-through ;
+        color: rgb(143, 83, 88);
+        font-weight: 800;
+
+    }
