@@ -3,13 +3,11 @@
 require_once "../model/db.php";
 
 if ($_SERVER["REQUEST_METHOD"] === "POST") {
-    // Retrieve the search term from the form
     $searchText = $_POST["search"];
     
-    // Perform the search
+    
     $contacts = searchContacts($searchText);
     
-    // Display the search results
     if (!empty($contacts)) {
         echo "<h2>Search Results:</h2>";
         echo "<table>";

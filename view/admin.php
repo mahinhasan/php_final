@@ -12,33 +12,36 @@
 
 <body>
     <?php
-    require_once "../models/blogModel.php";
-    require_once "../models/userModel.php";
-    require_once "../models/planeModel.php";
-    require_once "../models/guideModel.php";
-    require_once "../models/hotelModel.php";
-    require_once "../models/transportModel.php";
+    // require_once "../models/blogModel.php";
+    // require_once "../models/userModel.php";
+    // require_once "../models/planeModel.php";
+    // require_once "../models/guideModel.php";
+    // require_once "../models/hotelModel.php";
+    // require_once "../models/transportModel.php";
 
+    require_once '../controler/worldPlace.php';
+    require_once '../controler/userCheck.php';
+    $totalPlace = countWorldTourRows();
+    $totalGuides = countGuides();
 
+    // $data = displayAllBlog();
+    // $row = mysqli_num_rows($data);
 
-    $data = displayAllBlog();
-    $row = mysqli_num_rows($data);
+    // $u = displayAllUser();
+    // $user = mysqli_num_rows($u);
 
-    $u = displayAllUser();
-    $user = mysqli_num_rows($u);
+    // $t = allPlane();
+    // $tour = mysqli_num_rows($t);
 
-    $t = allPlane();
-    $tour = mysqli_num_rows($t);
+    // $g = displayAllGuide();
+    // $guide = mysqli_num_rows($g);
 
-    $g = displayAllGuide();
-    $guide = mysqli_num_rows($g);
+    // $h = allHotel();
+    // $hotel = mysqli_num_rows($h);
 
-    $h = allHotel();
-    $hotel = mysqli_num_rows($h);
-
-    $tr = allTransport();
-    $transport = mysqli_num_rows($tr);
-    ?>
+    // $tr = allTransport();
+    // $transport = mysqli_num_rows($tr);
+    // ?>
 
     <input type="checkbox" id="nav-toggle">
 
@@ -100,7 +103,7 @@
             <div class="cards">
                 <div class="card-single">
                     <div>
-                        <h1><?php echo $user ?></h1>
+                        <!-- <h1><?php echo $user ?></h1> -->
                         <span>Users</span>
                     </div>
                     <div>
@@ -109,35 +112,52 @@
                 </div>
                 <div class="card-single">
                     <div>
-                        <h1><?php echo $hotel ?></h1>
+                        <!-- <h1><?php echo $hotel ?></h1> -->
+                        <h1>70</h1>
                         <span>Hotel</span>
                     </div>
                     <div>
                         <span class="fas fa-home"></span>
                     </div>
                 </div>
+                <a href="allGuides.php">
                 <div class="card-single">
                     <div>
-                        <h1><?php echo $guide ?></h1>
+                        <h1><?php echo $totalGuides ?></h1>
+                        
                         <span>Guide</span>
                     </div>
                     <div>
                         <span class="fas  fa-people-carry"></span>
                     </div>
                 </div>
+                </a>
                 <div class="card-single">
                     <div>
-                        <h1><?php echo $tour ?></h1>
+                        <!-- <h1><?php echo $tour ?></h1> -->
                         <span>Tours</span>
                     </div>
                     <div>
                         <span class="fas fa-car"></span>
                     </div>
                 </div>
+                <a href="worldwide.php">
                 <div class="card-single">
                     <div>
                         <h1>
-                            <?php echo $row ?>
+                            <?php echo $totalPlace; ?>
+                        </h1>
+                        <span>Place</span>
+                    </div>
+                    <div>
+                        <span class="fas fa-clipboard-list"></span>
+                    </div>
+                </div>
+                </a>
+                <div class="card-single">
+                    <div>
+                        <h1>
+                            <!-- <?php echo $row ?> -->
                         </h1>
                         <span>Blog</span>
                     </div>
@@ -147,7 +167,7 @@
                 </div>
                 <div class="card-single">
                     <div>
-                        <h1><?php echo $transport ?></h1>
+                        <!-- <h1><?php echo $transport ?></h1> -->
                         <span>Transport</span>
                     </div>
                     <div>
@@ -177,32 +197,31 @@
                                 </thead>
                                 <tbody>
                                     <tr>
-                                        <?php
-                                        $u = displayAllUser(); 
-                                        if ($user) {
-                                            while ($data = mysqli_fetch_array($u)) {
-                                                $id = $data['id'];
-                                                $name = $data['username'];
-                                                $email = $data['email'];
-                                                $phone = $data['phone'];
-                                                $gender = $data['gender'];
-                                                $usertype = $data['usertype'];
+                                    <?php
+// Assuming you have established a connection to the Oracle database
+require_once '../model/db.php';
+$conn = getConnection();
 
-                                                echo '<tr>
-                                                <td>' . $name . '</td>
-                                                <td>' . $email . '</td>
-                                                <td>' . $phone . '</td>
-                                                <td>' . $gender . '</td>
-                                                <td>' . $usertype . '</td>
-                                                <td>
-                                                    <button><a href="editUser.php?id=' . $id . '">Update</a></button>
-                                                    <button><a href="deleteUser.php?id=' . $id . '">Delete</a></button>
-                                                </td>   
-                                                </tr>';
-                                            }
-                                        }
 
-                                        ?>
+$stid = oci_parse($conn, "SELECT * FROM EMP");
+oci_execute($stid);
+
+while ($row = oci_fetch_array($stid, OCI_ASSOC+OCI_RETURN_NULLS)) {
+    $name = $row['ENAME'];
+    $job = $row['JOB'];
+
+
+    echo '<tr>
+        <td>' . $name . '</td>
+        <td>' . $job . '</td>
+    
+    </tr>';
+}
+
+oci_free_statement($stid);
+oci_close($conn);
+?>
+
                                     </tr>
 
                                 </tbody>
