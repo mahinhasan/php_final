@@ -7,9 +7,9 @@ $name = $_POST['username'];
 $email = $_POST['email'];
 $password = $_POST['password'];
 $gender = $_POST['gender'];
-$number = $_POST['number'];
+$phone = $_POST['phone'];
 $address = $_POST['address'];
-$usertype = $_POST['usertype'];
+
 
 // Perform validation
 $errors = array();
@@ -33,7 +33,7 @@ if (empty($gender)) {
     $errors[] = "Gender is required";
 }
 
-if (empty($number)) {
+if (empty($phone)) {
     $errors[] = "Phone number is required";
 }
 
@@ -49,17 +49,17 @@ if (!empty($errors)) {
     }
 } else {
     // Validated, proceed with saving the data
-    $contract = [
+    $user = [
         'username' => $name,
         'email' => $email,
         'password' => $password,
         'gender' => $gender,
-        'number' => $number,
+        'phone' => $phone,
         'address' => $address,
-        'usertype' => $usertype
+        
     ];
 
-    $status = insertUser($contract);
+    $status = insertUser($user);
 
     if ($status) {
         header('Location: ../view/login.php');

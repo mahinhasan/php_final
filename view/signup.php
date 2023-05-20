@@ -12,7 +12,7 @@ include_once 'navbar.php';
             <div class="row g-2">
                 
                 <div class="col-lg-4 col-md-12 wow fadeInUp offset-4" data-wow-delay="0.5s">
-                    <form method="POST" action="../controler/contractCheck.php">
+                    <form method="POST" action="../controler/signupCheck.php">
                         <div class="row g-3">
                             <div class="col-md-6">
                                 <div class="form-floating">
@@ -22,7 +22,7 @@ include_once 'navbar.php';
                             </div>
                             <div class="col-md-6">
                                 <div class="form-floating">
-                                    <input type="email" class="form-control" name="Email" id="email" placeholder="Your Password">
+                                    <input type="email" class="form-control" name="email" id="email" placeholder="Your Password">
                                     <label for="email">Your Email</label>
                                 </div>
                             </div>
@@ -40,7 +40,7 @@ include_once 'navbar.php';
                             </div>
                             <div class="col-md-6">
                                 <div class="form-floating">
-                                    <input type="text" class="form-control" name="number" id="type" placeholder="User Number">
+                                    <input type="text" class="form-control" name="phone" id="type" placeholder="User Number">
                                     <label for="number">Phone Number</label>
                                 </div>
                             </div>

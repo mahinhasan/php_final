@@ -127,7 +127,7 @@
             <div class="row g-2">
                 
                 <div class="col-lg-4 col-md-12 wow fadeInUp offset-4" data-wow-delay="0.5s">
-                    <form method="POST" action="../controler/contractCheck.php">
+                    <form method="POST" action="../controler/loginCheck.php">
                         <div class="row g-3">
                             <div class="col-md-6">
                                 <div class="form-floating">
