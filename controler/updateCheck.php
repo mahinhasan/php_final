@@ -3,7 +3,6 @@ require_once '../model/db.php';
 $conn = getConnection();
 
 try {
-    // Get the user ID and other updated values from the form
     $id = $_POST['id'];
     $username = $_POST['username'];
     $email = $_POST['email'];

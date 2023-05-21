@@ -27,7 +27,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $result = oci_execute($stmt);
 
     if ($result) {
-        header('Location:../view/index.php');
+        header('Location:../view/hotelInfo.php');
         echo 'Tour booked successfully!';
     } else {
         $error = oci_error($stmt);
