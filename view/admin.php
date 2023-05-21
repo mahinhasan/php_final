@@ -39,7 +39,7 @@
                     <a href="index.php"><span class="fas fa-home"></span><span>Home</span></a>
                 </li>
                 <li>
-                    <a href="planing.php"><span class="fas fa-users"></span><span>User</span></a>
+                    <a href="admin.php"><span class="fas fa-users"></span><span>User</span></a>
                 </li>
                 <li>
                     <a href="hotel.php"><span class="fas fa-hotel"></span><span>Hotel</span></a>
@@ -166,40 +166,56 @@
                             <table width="100%">
                                 <thead>
                                     <tr>
+                                        <td>ID</td>
                                         <td>Name</td>
                                         <td>Email</td>
-                                        <td>Phone</td>
                                         <td>Gender</td>
-                                        <td>User Type</td>
-                                        <td>function</td>
+                                        <td>Phone</td>
+                                        <td>Address</td>
+                                        
                                     </tr>
                                 </thead>
                                 <tbody>
                                     <tr>
                                     <?php
-// Assuming you have established a connection to the Oracle database
 require_once '../model/db.php';
 $conn = getConnection();
 
-
-$stid = oci_parse($conn, "SELECT * FROM EMP");
+$stid = oci_parse($conn, "SELECT * FROM users WHERE ROWNUM <= 5");
 oci_execute($stid);
 
-while ($row = oci_fetch_array($stid, OCI_ASSOC+OCI_RETURN_NULLS)) {
-    $name = $row['ENAME'];
-    $job = $row['JOB'];
-
+while ($row = oci_fetch_array($stid, OCI_ASSOC + OCI_RETURN_NULLS)) {
+    $id = $row['ID'];
+    $name = $row['USERNAME'];
+    $email = $row['EMAIL'];
+    $gender = $row['GENDER'];
+    $phone = $row['PHONE'];
+    $address = $row['ADDRESS'];
 
     echo '<tr>
+        <td>' . $id . '</td>
         <td>' . $name . '</td>
-        <td>' . $job . '</td>
-    
+        <td>' . $email . '</td>
+        <td>' . $gender . '</td>
+        <td>' . $phone . '</td>
+        <td>' . $address . '</td>
+        <td>
+            <form id="editForm_' . $id . '" method="POST" action="editUser.php">
+                <input type="hidden" name="id" value="' . $id . '">
+                <button type="submit" class="edit-button">Edit</button>
+            </form>
+                <form id="deleteForm_' . $id . '" method="POST" action="../controler/deleteCheck.php">
+                <input type="hidden" name="id" value="' . $id . '">
+                <button type="submit" class="delete-button">Delete</button>
+            </form>
+        </td>
     </tr>';
 }
 
 oci_free_statement($stid);
 oci_close($conn);
 ?>
+
 
                                     </tr>
 
@@ -214,6 +230,33 @@ oci_close($conn);
             </div>
         </main>
     </div>
+
+
+    <script>
+    function deleteUser(id) {
+        // Display an alert to confirm the deletion
+        if (confirm("Are you sure you want to delete this user?")) {
+            // Send a DELETE request to deleteCheck.php
+            fetch(`deleteCheck.php?id=${id}`, { method: 'DELETE' })
+                .then(response => {
+                    // Check if the deletion was successful
+                    if (response.ok) {
+                        // Redirect to the admin page
+                        window.location.href = "admin.php";
+                    } else {
+                        // Handle any errors or display a message
+                        console.error('An error occurred during deletion.');
+                    }
+                })
+                .catch(error => {
+                    console.error('An error occurred during deletion:', error);
+                });
+        }
+    }
+
+
+ 
+</script>
 
 
 
