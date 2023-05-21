@@ -12,36 +12,15 @@
 
 <body>
     <?php
-    // require_once "../models/blogModel.php";
-    // require_once "../models/userModel.php";
-    // require_once "../models/planeModel.php";
-    // require_once "../models/guideModel.php";
-    // require_once "../models/hotelModel.php";
-    // require_once "../models/transportModel.php";
+   
 
     require_once '../controler/worldPlace.php';
     require_once '../controler/userCheck.php';
     $totalPlace = countWorldTourRows();
     $totalGuides = countGuides();
 
-    // $data = displayAllBlog();
-    // $row = mysqli_num_rows($data);
-
-    // $u = displayAllUser();
-    // $user = mysqli_num_rows($u);
-
-    // $t = allPlane();
-    // $tour = mysqli_num_rows($t);
-
-    // $g = displayAllGuide();
-    // $guide = mysqli_num_rows($g);
-
-    // $h = allHotel();
-    // $hotel = mysqli_num_rows($h);
-
-    // $tr = allTransport();
-    // $transport = mysqli_num_rows($tr);
-    // ?>
+   
+     ?>
 
     <input type="checkbox" id="nav-toggle">
 

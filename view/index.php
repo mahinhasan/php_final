@@ -258,7 +258,7 @@ Travel with Ease: Discover the Power of Online Booking!
                     </div>
                     <div class="col-md-6">
                         <h1 class="text-white mb-4">Book A Tour</h1>
-                        <form method="POST" action="../controler/bookTour.php">
+                        <form method="POST" action="../controler/bookTour.php" id="bookingForm">
   <div class="row g-3">
     <div class="col-md-6">
       <div class="form-floating">
@@ -304,10 +304,37 @@ Travel with Ease: Discover the Power of Online Booking!
       </div>
     </div>
     <div class="col-12">
-      <button class="btn btn-outline-light w-100 py-3" type="submit">Book Now</button>
+      <?php
+       
+
+        // Check if the user is not logged in
+        if (!isset($_SESSION['username'])) {
+          echo '<button class="btn btn-outline-light w-100 py-3" type="button" onclick="showAlert()">Book Now</button>';
+        } else {
+          echo '<button class="btn btn-outline-light w-100 py-3" type="submit">Book Now</button>';
+        }
+      ?>
     </div>
   </div>
 </form>
+
+<script>
+  function showAlert() {
+    alert("Please log in to book the tour.");
+  }
+
+  // Disable form submission if user is not logged in
+  var bookingForm = document.getElementById("bookingForm");
+  bookingForm.addEventListener("submit", function(event) {
+    var isLoggedIn = <?php echo isset($_SESSION['username']) ? $_SESSION['username'] : 'false'; ?>;
+
+    if (!isLoggedIn) {
+      event.preventDefault();
+      showAlert();
+    }
+  });
+</script>
+
 
                     </div>
                 </div>

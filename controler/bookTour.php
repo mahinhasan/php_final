@@ -1,26 +1,29 @@
 <?php
-
-require_once '../model/db.php'; // Include the database connection code
+session_start();
+require_once '../model/db.php'; 
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-    // Retrieve form data
+    
     $name = $_POST['name'];
     $email = $_POST['email'];
     $datetime = $_POST['datetime'];
     $destination = $_POST['destination'];
     $specialRequest = $_POST['special_request'];
-    echo 'Destination: ' . $destination; // Add this line for debugging purposes
+    echo 'Destination: ' . $destination; 
 
-    // Insert the booking details into the tourBooking table
+    $username = $_SESSION['username'];
+    
     $con = getConnection();
 
-    $stmt = oci_parse($con, 'INSERT INTO tourBooking (booking_id, name, email, datetime, destination, special_request)
-                            VALUES (booking_id_seq.nextval, :name, :email, :datetime, :destination, :special_request)');
+    $stmt = oci_parse($con, 'INSERT INTO tourBooking (booking_id, name, email, datetime, destination, special_request,username)
+                            VALUES (booking_id_seq.nextval, :name, :email, :datetime, :destination, :special_request,:username)');
     oci_bind_by_name($stmt, ':name', $name);
     oci_bind_by_name($stmt, ':email', $email);
     oci_bind_by_name($stmt, ':datetime', $datetime);
     oci_bind_by_name($stmt, ':destination', $destination);
     oci_bind_by_name($stmt, ':special_request', $specialRequest);
+    oci_bind_by_name($stmt, ':username', $username);
+
     $result = oci_execute($stmt);
 
     if ($result) {
