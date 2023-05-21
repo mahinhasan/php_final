@@ -1,6 +1,5 @@
 <?php 
 include 'navbar.php';
-session_start();
 
 
 ?>
@@ -68,7 +67,7 @@ session_start();
                     <div class="service-item rounded pt-3">
                         <div class="p-4">
                             <i class="fa fa-3x fa-hotel text-primary mb-4"></i>
-                            <h5>Hotel Reservation</h5>
+                            <a href="hotelInfo.php"><h5>Hotel Reservation</h5>
                             <p>Diam elitr kasd sed at elitr sed ipsum justo dolor sed clita amet diam</p>
                         </div>
                     </div>

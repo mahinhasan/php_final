@@ -37,7 +37,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             exit();
         } else {
             echo $loginStatus;
-            echo "Invalid username or password";
+            $_SESSION['error'] = $loginStatus;
+
+            header('Location:../view/login.php');
         }
     }
 }
