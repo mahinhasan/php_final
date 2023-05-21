@@ -1,3 +1,5 @@
+
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -16,8 +18,11 @@
 
     require_once '../controler/worldPlace.php';
     require_once '../controler/userCheck.php';
+    require_once '../model/reservationModel.php';
     $totalPlace = countWorldTourRows();
     $totalGuides = countGuides();
+    $totalUser = countUser();
+    $totalHotel = countHotel();
 
    
      ?>
@@ -82,7 +87,7 @@
             <div class="cards">
                 <div class="card-single">
                     <div>
-                        <!-- <h1><?php echo $user ?></h1> -->
+                        <h1><?php echo $totalUser ?></h1>
                         <span>Users</span>
                     </div>
                     <div>
@@ -91,8 +96,8 @@
                 </div>
                 <div class="card-single">
                     <div>
-                        <!-- <h1><?php echo $hotel ?></h1> -->
-                        <h1>70</h1>
+                        <!-- <h1><?php echo $totalHotel ?></h1> -->
+                        <h1>6</h1>
                         <span>Hotel</span>
                     </div>
                     <div>
@@ -114,10 +119,10 @@
                 <div class="card-single">
                     <div>
                         <!-- <h1><?php echo $tour ?></h1> -->
-                        <span>Tours</span>
+                        <span>Tours Created</span>
                     </div>
                     <div>
-                        <span class="fas fa-car"></span>
+                        <span class="fas fa-location"></span>
                     </div>
                 </div>
                 <a href="worldwide.php">

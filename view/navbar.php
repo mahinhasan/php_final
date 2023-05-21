@@ -75,44 +75,57 @@ session_start();
 
     <!-- Navbar & Hero Start -->
     <div class="container-fluid position-relative p-0">
+    <!-- Navbar & Hero Start -->
+<div class="container-fluid position-relative p-0">
     <nav class="navbar navbar-expand-lg navbar-light px-2 px-lg-5 py-2 py-lg-0">
-    <a href="" class="navbar-brand p-0">
-        <h1 class="text-primary m-0">Tourism</h1>
-        <!-- <img src="img/logo.png" alt="Logo"> -->
-    </a>
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
-        <span class="fa fa-bars"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarCollapse">
-        <div class="navbar-nav ms-auto py-0">
-            <a href="index.php" class="nav-item nav-link active">Home</a>
-            <a href="about.php" class="nav-item nav-link">About</a>
-            <a href="service.php" class="nav-item nav-link">Services</a>
-            <a href="package.php" class="nav-item nav-link">Packages</a>
-            <a href="contact.php" class="nav-item nav-link">Contact</a>
-            
-            <div class="nav-item dropdown">
-                <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Pages</a>
-                <div class="dropdown-menu m-0">
-                    <a href="destination.php" class="dropdown-item">Destination</a>
-                    <a href="booking.php" class="dropdown-item">Booking</a>
-                    <a href="team.php" class="dropdown-item">Travel Guides</a>
-                    <a href="testimonial.php" class="dropdown-item">Testimonial</a>
+        <a href="" class="navbar-brand p-0">
+            <h1 class="text-primary m-0">Tourism</h1>
+            <!-- <img src="img/logo.png" alt="Logo"> -->
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
+            <span class="fa fa-bars"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarCollapse">
+            <div class="navbar-nav ms-auto py-0">
+                <a href="index.php" class="nav-item nav-link active">Home</a>
+                <a href="about.php" class="nav-item nav-link">About</a>
+                <a href="service.php" class="nav-item nav-link">Services</a>
+                <a href="package.php" class="nav-item nav-link">Packages</a>
+                <a href="contact.php" class="nav-item nav-link">Contact</a>
 
-                    <a href="404.php" class="dropdown-item">404 Page</a>
+                <div class="nav-item dropdown">
+                    <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Pages</a>
+                    <div class="dropdown-menu m-0">
+                        <a href="destination.php" class="dropdown-item">Destination</a>
+                        <a href="booking.php" class="dropdown-item">Booking</a>
+                        <a href="team.php" class="dropdown-item">Travel Guides</a>
+                        <a href="testimonial.php" class="dropdown-item">Testimonial</a>
+                        <a href="404.php" class="dropdown-item">404 Page</a>
+                    </div>
                 </div>
+
+                <?php if (isset($_SESSION['username'])) { ?>
+                    <a href="logout.php" class="nav-item nav-link">Logout</a>
+                <?php } else { ?>
+                    <a href="login.php" class="nav-item nav-link">Login</a>
+                <?php } ?>
             </div>
-            <?php if (isset($_SESSION['username'])) { ?>
-                <a href="logout.php" class="nav-item nav-link">Logout</a>
-            <?php } else { ?>
-                <a href="login.php" class="nav-item nav-link">Login</a>
+
+            <?php if (!isset($_SESSION['username'])) { ?>
+                <a href="signup.php" class="btn btn-primary rounded-pill py-2 px-4">Register</a>
             <?php } ?>
+
+            <!-- Search Form -->
+            <form method="POST" action="../controler/searchCheck.php" class="d-flex">
+                <input class="form-control me-2" type="search" name="search" placeholder="Eg: Thailand" aria-label="Search">
+                <button class="btn btn-primary" type="submit">Search</button>
+            </form>
         </div>
-        <?php if (!isset($_SESSION['username'])) { ?>
-            <a href="signup.php" class="btn btn-primary rounded-pill py-2 px-4">Register</a>
-        <?php } ?>
-    </div>
-</nav>
+    </nav>
+
+  
+</div>
+<!-- Navbar & Hero End -->
 
 
         <div class="container-fluid bg-primary py-5 mb-5 hero-header">

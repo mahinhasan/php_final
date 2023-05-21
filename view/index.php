@@ -1,22 +1,19 @@
-<?php 
-include 'navbar.php';
-
-
-?>
+<?php
+include "navbar.php"; ?>
     <!-- About Start -->
     <div class="container-xxl py-5">
         <div class="container">
             <div class="row g-5">
                 <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.1s" style="min-height: 400px;">
                     <div class="position-relative h-100">
-                        <img class="img-fluid position-absolute w-100 h-100" src="img/about.jpg" alt="" style="object-fit: cover;">
+                        <img class="img-fluid position-absolute w-100 h-100" src="../img/about.jpg" alt="" style="object-fit: cover;">
                     </div>
                 </div>
                 <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.3s">
                     <h6 class="section-title bg-white text-start text-primary pe-3">About Us</h6>
                     <h1 class="mb-4">Welcome to <span class="text-primary">Tourist</span></h1>
-                    <p class="mb-4">Tempor erat elitr rebum at clita. Diam dolor diam ipsum sit. Aliqu diam amet diam et eos. Clita erat ipsum et lorem et sit.</p>
-                    <p class="mb-4">Tempor erat elitr rebum at clita. Diam dolor diam ipsum sit. Aliqu diam amet diam et eos. Clita erat ipsum et lorem et sit, sed stet lorem sit clita duo justo magna dolore erat amet</p>
+                    <p class="mb-4"></p>
+                    <p class="mb-4"></p>
                     <div class="row gy-2 gx-4 mb-4">
                         <div class="col-sm-6">
                             <p class="mb-0"><i class="fa fa-arrow-right text-primary me-2"></i>First Class Flights</p>
@@ -47,52 +44,50 @@ include 'navbar.php';
 
     <!-- Service Start -->
     <div class="container-xxl py-5">
-        <div class="container">
-            <div class="text-center wow fadeInUp" data-wow-delay="0.1s">
-                <h6 class="section-title bg-white text-center text-primary px-3">Services</h6>
-                <h1 class="mb-5">Our Services</h1>
-            </div>
-            <div class="row g-4">
-                <div class="col-lg-3 col-sm-6 wow fadeInUp" data-wow-delay="0.1s">
-                    <div class="service-item rounded pt-3">
-                        <div class="p-4">
-                            <i class="fa fa-3x fa-globe text-primary mb-4"></i>
-                            <a href="worldwide.php"><h5>WorldWide Tours</h5>
-                            <p>See the world. It's more amazing than anything you can imagine.</p>
-                            </a>
-                        </div>
-                    </div>
+    <div class="container">
+    <div class="text-center wow fadeInUp" data-wow-delay="0.1s">
+        <h6 class="section-title bg-white text-center text-primary px-3">Services</h6>
+        <h1 class="mb-5">Our Services</h1>
+    </div>
+    <div class="row g-4">
+        <div class="col-lg-4 col-sm-6 wow fadeInUp" data-wow-delay="0.1s">
+            <div class="service-item rounded pt-3">
+                <div class="p-4">
+                    <i class="fa fa-3x fa-globe text-primary mb-4"></i>
+                    <a href="worldwide.php">
+                        <h5>WorldWide Tours</h5>
+                        <p>See the world. It's more amazing than anything you can imagine.</p>
+                    </a>
                 </div>
-                <div class="col-lg-3 col-sm-6 wow fadeInUp" data-wow-delay="0.3s">
-                    <div class="service-item rounded pt-3">
-                        <div class="p-4">
-                            <i class="fa fa-3x fa-hotel text-primary mb-4"></i>
-                            <a href="hotelInfo.php"><h5>Hotel Reservation</h5>
-                            <p>Diam elitr kasd sed at elitr sed ipsum justo dolor sed clita amet diam</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-sm-6 wow fadeInUp" data-wow-delay="0.5s">
-                    <div class="service-item rounded pt-3">
-                        <div class="p-4">
-                            <i class="fa fa-3x fa-user text-primary mb-4"></i>
-                            <h5>Travel Guides</h5>
-                            <p>Diam elitr kasd sed at elitr sed ipsum justo dolor sed clita amet diam</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-sm-6 wow fadeInUp" data-wow-delay="0.7s">
-                    <div class="service-item rounded pt-3">
-                        <div class="p-4">
-                            <i class="fa fa-3x fa-cog text-primary mb-4"></i>
-                            <h5>Event Management</h5>
-                            <p>Diam elitr kasd sed at elitr sed ipsum justo dolor sed clita amet diam</p>
-                        </div>
-                    </div>
-                </div>
-                
             </div>
         </div>
+        <div class="col-lg-4 col-sm-6 wow fadeInUp" data-wow-delay="0.3s">
+            <div class="service-item rounded pt-3">
+            <div class="p-4">
+    <i class="fa fa-3x fa-hotel text-primary mb-4"></i>
+    <a href="hotelInfo.php">
+        <h5>Hotel Reservation</h5>
+        <p>A journey of a thousand miles begins with a reservation.</p>
+    </a>
+    
+</div>
+
+            </div>
+        </div>
+        <div class="col-lg-4 col-sm-6 wow fadeInUp" data-wow-delay="0.5s">
+            <div class="service-item rounded pt-3">
+                <div class="p-4">
+                    <i class="fa fa-3x fa-user text-primary mb-4"></i>
+                    <a href="allGuides.php">
+                    <h5>Travel Guides</h5>
+                    <p>A good travel guide can turn an ordinary trip into an extraordinary adventure.</p>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
     </div>
     <!-- Service End -->
 
@@ -108,22 +103,22 @@ include 'navbar.php';
                 <div class="col-lg-7 col-md-6">
                     <div class="row g-3">
                         <div class="col-lg-12 col-md-12 wow zoomIn" data-wow-delay="0.1s">
-                            <a class="position-relative d-block overflow-hidden" href="">
-                                <img class="img-fluid" src="img/destination-1.jpg" alt="">
+                            <a class="position-relative d-block overflow-hidden" href="booking.php">
+                                <img class="img-fluid" src="../img/destination-1.jpg" alt="">
                                 <div class="bg-white text-danger fw-bold position-absolute top-0 start-0 m-3 py-1 px-2">30% OFF</div>
                                 <div class="bg-white text-primary fw-bold position-absolute bottom-0 end-0 m-3 py-1 px-2">Thailand</div>
                             </a>
                         </div>
                         <div class="col-lg-6 col-md-12 wow zoomIn" data-wow-delay="0.3s">
-                            <a class="position-relative d-block overflow-hidden" href="">
-                                <img class="img-fluid" src="img/destination-2.jpg" alt="">
+                            <a class="position-relative d-block overflow-hidden" href="booking.php">
+                                <img class="img-fluid" src="../img/destination-2.jpg" alt="">
                                 <div class="bg-white text-danger fw-bold position-absolute top-0 start-0 m-3 py-1 px-2">25% OFF</div>
                                 <div class="bg-white text-primary fw-bold position-absolute bottom-0 end-0 m-3 py-1 px-2">Malaysia</div>
                             </a>
                         </div>
                         <div class="col-lg-6 col-md-12 wow zoomIn" data-wow-delay="0.5s">
-                            <a class="position-relative d-block overflow-hidden" href="">
-                                <img class="img-fluid" src="img/destination-3.jpg" alt="">
+                            <a class="position-relative d-block overflow-hidden" href="booking.php">
+                                <img class="img-fluid" src="../img/destination-3.jpg" alt="">
                                 <div class="bg-white text-danger fw-bold position-absolute top-0 start-0 m-3 py-1 px-2">35% OFF</div>
                                 <div class="bg-white text-primary fw-bold position-absolute bottom-0 end-0 m-3 py-1 px-2">Australia</div>
                             </a>
@@ -131,8 +126,8 @@ include 'navbar.php';
                     </div>
                 </div>
                 <div class="col-lg-5 col-md-6 wow zoomIn" data-wow-delay="0.7s" style="min-height: 350px;">
-                    <a class="position-relative d-block h-100 overflow-hidden" href="">
-                        <img class="img-fluid position-absolute w-100 h-100" src="img/destination-4.jpg" alt="" style="object-fit: cover;">
+                    <a class="position-relative d-block h-100 overflow-hidden" href="booking.php">
+                        <img class="img-fluid position-absolute w-100 h-100" src="../img/destination-4.jpg" alt="" style="object-fit: cover;">
                         <div class="bg-white text-danger fw-bold position-absolute top-0 start-0 m-3 py-1 px-2">20% OFF</div>
                         <div class="bg-white text-primary fw-bold position-absolute bottom-0 end-0 m-3 py-1 px-2">Indonesia</div>
                     </a>
@@ -254,16 +249,13 @@ Unlock a World of Possibilities: Book Your Dreams Online Today!
 Your Journey Starts Here: Book Online for a Memorable Experience!
 Travel with Ease: Discover the Power of Online Booking!
                         </p>
-                        <p class="mb-4">Tempor erat elitr rebum at clita. Diam dolor diam ipsum sit. Aliqu diam amet diam et eos. Clita erat ipsum et lorem et sit, sed stet lorem sit clita duo justo magna dolore erat amet</p>
                         <a class="btn btn-outline-light py-3 px-5 mt-2" href="">Read More</a>
                     </div>
                     <div class="col-md-6">
                         <h1 class="text-white mb-4">Book A Tour</h1>
                         
 
-                <?php
-                    include_once 'bookTour.php';
-                ?>
+                <?php include_once "bookTour.php"; ?>
 
 
 <script>
@@ -274,7 +266,9 @@ Travel with Ease: Discover the Power of Online Booking!
   // Disable form submission if user is not logged in
   var bookingForm = document.getElementById("bookingForm");
   bookingForm.addEventListener("submit", function(event) {
-    var isLoggedIn = <?php echo isset($_SESSION['username']) ? $_SESSION['username'] : 'false'; ?>;
+    var isLoggedIn = <?php echo isset($_SESSION["username"])
+        ? $_SESSION["username"]
+        : "false"; ?>;
 
     if (!isLoggedIn) {
       event.preventDefault();
@@ -354,16 +348,17 @@ Travel with Ease: Discover the Power of Online Booking!
 
             <div class="row g-4">
             <?php
-    require_once "../controler/allGuides.php";
+            require_once "../controler/allGuides.php";
 
-    $allguides = getAllGuides();
+            $allguides = getAllGuides();
 
-    foreach ($allguides as $guide) {
-        $name = $guide['NAME'];
-        $address = $guide['ADDRESS'];
-        $phone = $guide['PHONE'];
-        $area = $guide['AREA'];
-        ?>
+            foreach ($allguides as $guide) {
+
+                $name = $guide["NAME"];
+                $address = $guide["ADDRESS"];
+                $phone = $guide["PHONE"];
+                $area = $guide["AREA"];
+                ?>
 
 
 
@@ -386,8 +381,8 @@ Travel with Ease: Discover the Power of Online Booking!
                 </div>
 
                 <?php
-    }
-    ?>
+            }
+            ?>
  
             </div>
             
@@ -402,7 +397,5 @@ Travel with Ease: Discover the Power of Online Booking!
   
    
         
-<?php
-include_once 'footer.php'
-?>
+<?php include_once "footer.php"; ?>
   

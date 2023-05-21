@@ -1,11 +1,11 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <title>Edit User</title>
-    <!-- Add your CSS and other head elements here -->
-</head>
-<body>
-    <h1>Edit User</h1>
+<?php
+include_once 'navbar.php';
+?>
+   <div class="container-xxl py-5">
+  <div class="container">
+    <div class="text-center wow fadeInUp" data-wow-delay="0.1s">
+      <h6 class="section-title bg-white text-center text-primary px-3">Edit User</h6>
+    </div>
     <?php
     require_once '../model/db.php';
 
@@ -24,28 +24,59 @@
         // Close the database connection
         oci_free_statement($query);
         oci_close($conn);
+        ?>
 
-        // Display the form for editing the user information
-        echo '
-        <form method="POST" action="../controler/updateCheck.php">
-            <input type="hidden" name="id" value="' . $user['ID'] . '">
-            <label for="username">Username:</label>
-            <input type="text" id="username" name="username" value="' . $user['USERNAME'] . '"><br><br>
-            <label for="email">Email:</label>
-            <input type="email" id="email" name="email" value="' . $user['EMAIL'] . '"><br><br>
-            <label for="gender">Gender:</label>
-            <input type="text" id="gender" name="gender" value="' . $user['GENDER'] . '"><br><br>
-            <label for="phone">Phone:</label>
-            <input type="text" id="phone" name="phone" value="' . $user['PHONE'] . '"><br><br>
-            <label for="address">Address:</label>
-            <input type="text" id="address" name="address" value="' . $user['ADDRESS'] . '"><br><br>
-            <button type="submit">Update User</button>
-        </form>';
-    } else {
+        <div class="row g-2">
+            <div class="col-lg-4 col-md-12 wow fadeInUp offset-4" data-wow-delay="0.5s">
+                <form method="POST" action="../controler/updateCheck.php">
+                    <input type="hidden" name="id" value="<?php echo $user['ID']; ?>">
+                    <div class="row g-3">
+                        <div class="col-md-6">
+                            <div class="form-floating">
+                                <input type="text" class="form-control" name="username" id="username" value="<?php echo $user['USERNAME']; ?>">
+                                <label for="username">User Username</label>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-floating">
+                                <input type="email" class="form-control" name="email" id="email" value="<?php echo $user['EMAIL']; ?>">
+                                <label for="email">Your Email</label>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-floating">
+                                <input type="text" class="form-control" name="gender" id="gender" value="<?php echo $user['GENDER']; ?>">
+                                <label for="gender">Your Gender</label>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-floating">
+                                <input type="text" class="form-control" name="phone" id="phone" value="<?php echo $user['PHONE']; ?>">
+                                <label for="phone">Phone Number</label>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-floating">
+                                <input type="text" class="form-control" name="address" id="address" value="<?php echo $user['ADDRESS']; ?>">
+                                <label for="address">Your Address</label>
+                            </div>
+                        </div>
+                        <div class="col-12">
+                            <button class="btn btn-primary w-50 py-2" type="submit">Update User</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    <?php } else {
         // Redirect to the admin page if the form is not submitted
         header("Location:admin.php");
         exit;
     }
     ?>
-</body>
-</html>
+  </div>
+</div>
+
+<?php
+include_once 'footer.php';
+?>
