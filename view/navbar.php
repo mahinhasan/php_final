@@ -50,7 +50,7 @@ session_start();
 
 
     <!-- Topbar Start -->
-    <div class="container-fluid bg-dark px-5 d-none d-lg-block">
+    <!-- <div class="container-fluid bg-dark px-5 d-none d-lg-block">
         <div class="row gx-0">
             <div class="col-lg-8 text-center text-lg-start mb-2 mb-lg-0">
                 <div class="d-inline-flex align-items-center" style="height: 45px;">
@@ -69,7 +69,7 @@ session_start();
                 </div>
             </div>
         </div>
-    </div>
+    </div> -->
     <!-- Topbar End -->
 
 
@@ -88,7 +88,7 @@ session_start();
         <div class="collapse navbar-collapse" id="navbarCollapse">
             <div class="navbar-nav ms-auto py-0">
                 <a href="index.php" class="nav-item nav-link active">Home</a>
-                <a href="about.php" class="nav-item nav-link">About</a>
+                <!-- <a href="about.php" class="nav-item nav-link">About</a> -->
                 <a href="service.php" class="nav-item nav-link">Services</a>
                 <a href="package.php" class="nav-item nav-link">Packages</a>
                 <a href="contact.php" class="nav-item nav-link">Contact</a>
