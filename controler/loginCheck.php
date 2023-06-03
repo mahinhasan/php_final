@@ -32,7 +32,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             if ($username === 'mahin') {
                 header('Location: ../view/admin.php');
             } else {
-                header('Location: ../view/index.php');
+                header('Location: ../view/theme/index.php');
             }
             exit();
         } else {

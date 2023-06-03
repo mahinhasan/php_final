@@ -10,7 +10,7 @@ session_start();
 
 <head>
     <meta charset="utf-8">
-    <title>Tourist - Travel Agency HTML Template</title>
+    <title>Tourism - Travel and explore the world!</title>
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
     <meta content="" name="keywords">
     <meta content="" name="description">
@@ -92,8 +92,9 @@ session_start();
                 <a href="service.php" class="nav-item nav-link">Services</a>
                 <a href="package.php" class="nav-item nav-link">Packages</a>
                 <a href="contact.php" class="nav-item nav-link">Contact</a>
+                <a href="theme/index.php" class="nav-item nav-link">Tourism</a>
 
-                <div class="nav-item dropdown">
+                <!-- <div class="nav-item dropdown">
                     <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Pages</a>
                     <div class="dropdown-menu m-0">
                         <a href="destination.php" class="dropdown-item">Destination</a>
@@ -102,7 +103,7 @@ session_start();
                         <a href="testimonial.php" class="dropdown-item">Testimonial</a>
                         <a href="404.php" class="dropdown-item">404 Page</a>
                     </div>
-                </div>
+                </div> -->
 
                 <?php if (isset($_SESSION['username'])) { ?>
                     <a href="logout.php" class="nav-item nav-link">Logout</a>
